@@ -1,0 +1,49 @@
+---
+import WineCard from './WineCard.astro';
+
+const wines = [
+  {
+    name: 'Les Fesses',
+    domaine: 'Domaine de la Bohème',
+    region: 'Languedoc',
+    grape: 'Grenache',
+    type: 'Rouge' as const,
+    note: 'Cerises, garrigue et une finale qui danse.',
+    price: '7€ /verre',
+  },
+  {
+    name: 'Blanc Bec',
+    domaine: 'Mas de l\'Ange',
+    region: 'Provence',
+    grape: 'Rolle',
+    type: 'Blanc' as const,
+    note: 'Salin, vif, comme une baignade à Sormiou.',
+    price: '8€ /verre',
+  },
+  {
+    name: 'Pétillant Naturel',
+    domaine: 'La Ferme des Music',
+    region: 'Rhône',
+    grape: 'Clairette',
+    type: 'Pét-nat' as const,
+    note: 'Des bulles joyeuses, parfait pour un mardi soir.',
+    price: '6€ /verre',
+  },
+];
+---
+<section class="py-28 px-6 bg-plaster" id="vins">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section header -->
+    <div class="mb-16 reveal">
+      <h2 class="font-accent text-5xl text-charcoal -rotate-1 inline-block mb-3">Cette semaine</h2>
+      <p class="font-body text-warm-gray text-sm mt-2">Ce qu'on verse en ce moment ✦</p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {wines.map((wine) => (
+        <WineCard {...wine} />
+      ))}
+    </div>
+  </div>
+</section>

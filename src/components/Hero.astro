@@ -1,0 +1,48 @@
+---
+---
+<section class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
+  <!-- Watermark background letter -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <span class="font-display font-black text-plaster leading-none" style="font-size: clamp(16rem, 40vw, 48rem); opacity: 0.55; user-select: none;">T</span>
+  </div>
+
+  <!-- Decorative dots top right -->
+  <div class="absolute top-28 right-12 hidden md:flex flex-col gap-2" aria-hidden="true">
+    <div class="flex gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta opacity-40"></span>
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta opacity-25"></span>
+    </div>
+    <div class="flex gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta opacity-25"></span>
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta opacity-15"></span>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 text-center max-w-5xl mx-auto">
+    <!-- Caveat annotation above -->
+    <p class="animate-hero-1 font-accent text-xl text-terracotta mb-6 -rotate-1 inline-block">
+      Bar à vins naturels · Le Panier, Marseille
+    </p>
+
+    <!-- Main heading -->
+    <h1 class="animate-hero-2 font-display font-black text-charcoal leading-tight mb-8">
+      <span class="block" style="font-size: clamp(3.5rem, 10vw, 8rem);">Le vin est</span>
+      <span class="block text-terracotta" style="font-size: clamp(4rem, 12vw, 10rem); line-height: 0.9;">une</span>
+      <span class="block" style="font-size: clamp(3.5rem, 10vw, 8rem);">trouvaille.</span>
+    </h1>
+
+    <!-- Terracotta rule -->
+    <div class="animate-hero-3 flex items-center justify-center gap-4 my-8" aria-hidden="true">
+      <span class="block w-16 h-px bg-terracotta opacity-50"></span>
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta opacity-60"></span>
+      <span class="block w-16 h-px bg-terracotta opacity-50"></span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="animate-hero-4 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <span class="font-accent text-base text-warm-gray">défiler</span>
+    <div class="scroll-arrow w-5 h-5 border-r-2 border-b-2 border-warm-gray rotate-45 opacity-60"></div>
+  </div>
+</section>

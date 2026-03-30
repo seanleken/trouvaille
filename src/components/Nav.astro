@@ -1,0 +1,45 @@
+---
+---
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="site-nav">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="#" class="font-display text-xl font-bold text-charcoal tracking-wide no-underline" style="text-decoration:none;">
+      Trouvaille
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="#vins" class="font-body text-sm text-charcoal hover:text-terracotta transition-colors duration-200">Nos Vins</a>
+      <a href="#histoire" class="font-body text-sm text-charcoal hover:text-terracotta transition-colors duration-200">Notre Histoire</a>
+      <a href="#trouver" class="font-body text-sm text-charcoal hover:text-terracotta transition-colors duration-200">Nous Trouver</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Ouvrir le menu">
+      <span class="block w-6 h-px bg-charcoal"></span>
+      <span class="block w-6 h-px bg-charcoal"></span>
+      <span class="block w-4 h-px bg-charcoal"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-cream flex flex-col items-center justify-center">
+  <button id="menu-close" class="absolute top-6 right-6 text-charcoal font-body text-2xl p-2" aria-label="Fermer">✕</button>
+  <nav class="flex flex-col items-center gap-10">
+    <a href="#vins" class="font-display text-3xl text-charcoal hover:text-terracotta transition-colors">Nos Vins</a>
+    <a href="#histoire" class="font-display text-3xl text-charcoal hover:text-terracotta transition-colors">Notre Histoire</a>
+    <a href="#trouver" class="font-display text-3xl text-charcoal hover:text-terracotta transition-colors">Nous Trouver</a>
+  </nav>
+  <p class="font-accent text-xl text-warm-gray mt-16 -rotate-2">Bar à vins naturels, Marseille</p>
+</div>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav?.classList.add('bg-cream/90', 'backdrop-blur-sm', 'shadow-warm');
+    } else {
+      nav?.classList.remove('bg-cream/90', 'backdrop-blur-sm', 'shadow-warm');
+    }
+  });
+</script>

@@ -1,0 +1,49 @@
+---
+export interface Props {
+  name: string;
+  domaine: string;
+  region: string;
+  grape: string;
+  type: 'Rouge' | 'Blanc' | 'Pét-nat';
+  note: string;
+  price: string;
+}
+
+const { name, domaine, region, grape, type, note, price } = Astro.props;
+
+const typeBg = {
+  Rouge: 'bg-terracotta/10 text-terracotta',
+  Blanc: 'bg-ochre/10 text-ochre',
+  'Pét-nat': 'bg-olive/10 text-olive',
+};
+const typeDot = {
+  Rouge: 'bg-terracotta',
+  Blanc: 'bg-ochre',
+  'Pét-nat': 'bg-olive',
+};
+---
+<article class="bg-plaster border border-warm-gray/20 p-7 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-warm transition-all duration-300 reveal">
+  <!-- Type badge -->
+  <div class="flex items-center gap-2">
+    <span class={`w-2 h-2 rounded-full ${typeDot[type]}`}></span>
+    <span class={`font-body text-xs font-medium px-2.5 py-0.5 rounded-sm ${typeBg[type]}`}>{type}</span>
+  </div>
+
+  <!-- Wine name -->
+  <div>
+    <h3 class="font-display text-2xl font-bold text-charcoal leading-tight">{name}</h3>
+    <p class="font-body text-sm text-warm-gray mt-1">{domaine}</p>
+  </div>
+
+  <!-- Region & grape -->
+  <p class="font-body text-sm text-warm-gray">{region} · {grape}</p>
+
+  <!-- Tasting note -->
+  <p class="font-body text-sm text-charcoal italic leading-relaxed flex-1">{note}</p>
+
+  <!-- Divider -->
+  <div class="w-8 h-px bg-warm-gray opacity-30"></div>
+
+  <!-- Price -->
+  <p class="font-accent text-2xl text-terracotta font-bold">{price}</p>
+</article>
